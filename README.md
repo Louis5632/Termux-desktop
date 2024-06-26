@@ -25,3 +25,9 @@ chmod +x install.txt
 ```
 ./install.txt
 ```
+
+- If I don't Great then Do
+```
+./startxfce4_debian.sh
+```
+to start it It Will Take A few Seconds May be five to ten
