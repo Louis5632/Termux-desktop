@@ -8,7 +8,10 @@ Requirements
 
 - Termux installed on an Android device.
 - Internet connection for package installation.
-- Termux x11 for display 
+- Termux x11 for display
 
 credits to droidmaster
 https://youtube.com/@linuxdroidmaster?si=96aZNMHWW3aGb0sU
+
+-install
+
