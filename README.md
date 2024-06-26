@@ -16,7 +16,5 @@ https://youtube.com/@linuxdroidmaster?si=96aZNMHWW3aGb0sU
 - install
 -commands
 ```
-function test() {
-  console.log("This code will have a copy button to the right of it");
-}
+git clone
 ```
