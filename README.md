@@ -16,5 +16,9 @@ https://youtube.com/@linuxdroidmaster?si=96aZNMHWW3aGb0sU
 - install
 -commands
 ```
-git clone
+curl -O https://raw.githubusercontent.com/Louis5632/Termux-desktop-/main/install.txt
+
+```
+```
+chmod +x install.txt
 ```
