@@ -104,3 +104,5 @@ chmod +x $HOME/startxfce4_debian.sh
 echo "${G}User $username added successfully and configured.${W}"
 echo "${C}To start XFCE4 desktop, type:${W}"
 echo "  ./startxfce4_debian.sh"
+sleep 5
+rm install.txt
