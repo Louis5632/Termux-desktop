@@ -30,5 +30,5 @@ chmod +x install.txt
 ```
 ./startxfce4_debian.sh
 ```
-It will not look like this I customized It
+It will not look like this I customized It you can make It look like everything you want
 ![Screenshot_20240626_185224_TermuxX11](https://github.com/Louis5632/Termux-desktop/assets/152524471/1238bff7-5734-49fa-aa88-d92413d673a0)
