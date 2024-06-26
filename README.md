@@ -22,3 +22,6 @@ curl -O https://raw.githubusercontent.com/Louis5632/Termux-desktop-/main/install
 ```
 chmod +x install.txt
 ```
+```
+./install.txt
+```
