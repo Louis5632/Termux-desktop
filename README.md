@@ -14,4 +14,5 @@ credits to droidmaster
 https://youtube.com/@linuxdroidmaster?si=96aZNMHWW3aGb0sU
 
 - install
+-commands
 
