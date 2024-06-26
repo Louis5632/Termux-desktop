@@ -16,3 +16,7 @@ https://youtube.com/@linuxdroidmaster?si=96aZNMHWW3aGb0sU
 - install
 -commands
 
+\```
+This is copyable text.
+\```
+
