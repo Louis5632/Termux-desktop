@@ -9,26 +9,11 @@
 
 <br>
 
-## Default Look:
+## Installation 
 
-<center><img src="images/xfce/look_1/look.png"></center>
-<br>
+#kde: [Here](xfce_styles.md)
 
-# See Other Styles: [Here](xfce_styles.md)
-
-## See More Natively Supported Apps: [Here](applist.md)
-
-## Want To Install More Apps (Like: Libreoffice) Which Are Not Avilable In Termux:
-
-## Libre Office:
-
-<center><img src="images/apps/container-libreoffice-2.png"></center>
-
-## See How To Use Distro Container: [Click Here](proot-caontainer.md)
-
-## Hardware Acceleration In Distro Container And Also In Termux:
-
-<center><img src="images/pdrun-glmark2.png"></center>
+#xfce: [Here](applist.md)
 
 
 ## Know More About Hardware Acceleration: [Here](hw-acceleration.md)
@@ -36,7 +21,4 @@
 <br>
 <br>
 
-<a name="installation"></a>
-
-# Installation:
 
