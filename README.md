@@ -12,7 +12,9 @@
 
 -install proot-disro
 -debian: [Here](debian.md)
--arth: [Here](arth.md)0
+
+-arth: [Here](arth.md)
+
 -More coming soon
 
 
