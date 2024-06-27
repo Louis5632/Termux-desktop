@@ -22,7 +22,7 @@ wget https://raw.githubusercontent.com/Louis5632/Termux-desktop/main/xfce-instal
 Make it executable and run it.
 
 ```
-chmod +x kde-installer.md
+chmod +x xfce-installer.md
 ./xfce-installer.md
 ```
 to start it type 
