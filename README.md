@@ -6,14 +6,14 @@
 - 2GB of RAM 3GB of RAM
 - 1.5 - 2 GB Of Internet
 - 3 - 4 GB Of Free Storage
+- termux x11
 
 <br>
 
-## Installation 
+##
 
-#kde: [Here](kde.md)
+#debian: [Here](debian.md)
 
-#xfce: [Here](applist.md)
 
 
 
