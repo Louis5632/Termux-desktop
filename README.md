@@ -16,9 +16,4 @@
 #xfce: [Here](applist.md)
 
 
-## Know More About Hardware Acceleration: [Here](hw-acceleration.md)
-
-<br>
-<br>
-
 
