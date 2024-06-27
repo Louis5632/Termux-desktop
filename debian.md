@@ -13,7 +13,7 @@
 
 #kde: [Here](kde.md)
 
-#xfce: [Here]( xfce.md)
+#xfce: [Here]( debian-xfce.md)
 
 
 
