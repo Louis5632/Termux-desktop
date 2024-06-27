@@ -10,7 +10,8 @@
 
 <br>
 
--install proot-disro
+-install proot-distro
+
 -debian: [Here](debian.md)
 
 -arth: [Here](arth.md)
