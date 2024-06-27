@@ -12,4 +12,5 @@ This repository provides scripts to set up a Debian desktop environment within T
 #### Installation
 
 download installer
-```bash
+```
+```
