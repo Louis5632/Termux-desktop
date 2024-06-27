@@ -3,28 +3,11 @@ Collection of scripts to launch Desktops with audio in Termux X11. You have also
 
 # 📚 Index
 
-### PROOT-DISTRO (🍥 DEBIAN)
-* 🏁 [First steps](#first-steps)
-* ⚙️ [Installing Desktops](#installing-desktops)
-* 💻 [Running the Desktops to use them with Termux X11](#running-desktops)
-* ⬇️ [Download scripts to run the desktops](#easy-download)
-* 🎨 [Customizations - Themes](#customizations)
-* 🔥 [Hardware acceleration in Termux](https://github.com/LinuxDroidMaster/Termux-Desktops/blob/main/Documentation/HardwareAcceleration.md)
-
 ### PROOT-DISTRO (🔼 ARCH)
 * 🏁 [First steps](#first-steps-arch)
 * ⬇️ [Download scripts to run the desktops](#easy-download-arch)
 
-### TERMUX (NO PROOT)
-* 🏁 [First steps](#first-steps-termux)
-* 💻 [Running Windows programs on Termux native (XFCE Desktop + Mobox)](#mobox-with-desktop)
-* ⬇️ [Download scripts](#easy-download-termux)
-* 🎨 [Customizations - Themes](#customizations-termux)
 
-### TERMUX CHROOT - Root needed - ⚠️ Work In Progress ⚠️
-* 🏁 [First steps](#first-steps-chroot)
-* 💻 [Setting Ubuntu chroot](#ubuntu-chroot)
-* ⬇️ [Download distros for Chroot](#distros-chroot)
 
 <br>
 <br>  
@@ -34,19 +17,6 @@ Collection of scripts to launch Desktops with audio in Termux X11. You have also
 
 <br>
 <br>
-
-# PROOT-DISTRO (🍥 DEBIAN)
-
-## 🏁 First steps <a name=first-steps></a>
-We are going to use Termux and Termux X11 in order to have a full Linux Desktop in our Android devices. 
-
-* [[Video] How to install Termux](https://www.youtube.com/watch?v=OMJAyq5NHp0)
-
-* [[Video] How to install and use Termux X11](https://www.youtube.com/watch?v=mXkXzFqSeYE)
-
-* [[Video] How to install a COMPLETE Linux environtment on ANDROID - Customizing XFCE4 - Neon theme - No Root](https://www.youtube.com/watch?v=rDHyPw_7ETs)
-
-* [[Video] How to install a Linux distro on Android](https://www.youtube.com/watch?v=OMJAyq5NHp0)
 
 
 <details>
@@ -188,29 +158,16 @@ chmod +x startxfce4_debian.sh
 > By default this script works with the user "droidmaster". If you create a user with a different name in proot-distro, please change where it says "droidmaster" inside the scripts.
 
 * startgnome_debian.sh
-```
-wget https://raw.githubusercontent.com/LinuxDroidMaster/Termux-Desktops/main/scripts/proot_debian/startgnome_debian.sh
-```
 
 * startxfce4_debian.sh
-```
-wget https://raw.githubusercontent.com/LinuxDroidMaster/Termux-Desktops/main/scripts/proot_debian/startxfce4_debian.sh
-```
 
 * startlxde_debian.sh
-```
-wget https://raw.githubusercontent.com/LinuxDroidMaster/Termux-Desktops/main/scripts/proot_debian/startlxde_debian.sh
-```
-
+* 
 * startcinnamon_debian.sh
-```
-wget https://raw.githubusercontent.com/LinuxDroidMaster/Termux-Desktops/main/scripts/proot_debian/startcinnamon_debian.sh
-```
 
 * startkde_debian.sh
-```
-wget https://raw.githubusercontent.com/LinuxDroidMaster/Termux-Desktops/main/scripts/proot_debian/startkde_debian.sh
-```
+
+
 ---  
 <br>
 
@@ -232,43 +189,14 @@ All the process is described in more detail in this [video]().
 
 First you need to install the following packages in Termux: 
 ```
-pkg update
-pkg install x11-repo
-pkg install termux-x11-nightly
-pkg install pulseaudio
-pkg install proot-distro
-```
-
-Then install Arch and login once it finishes: 
-```
-proot-distro install archlinux
-proot-distro login archlinux
-```
-
-Update repositories and install any package you want: 
-```
-pacman -Sy
-pacman -Syu
-
-pacman -S sudo
-pacman -S xfce4
-```
 
 ---  
 <br>
 
 ## ⬇️ Download scripts easily: <a name=easy-download-arch></a> 
 
-> [!NOTE]  
-> By default this script works with the user "droidmaster". If you create a user with a different name in proot-distro, please change where it says "droidmaster" inside the scripts. And remember to give execution permissions to the script with `chmod +x scriptName.sh`
-
 * startxfce4_arch.sh
-```
-wget https://raw.githubusercontent.com/LinuxDroidMaster/Termux-Desktops/main/scripts/proot_arch/startxfce4_arch.sh
-```
 
-
----  
 <br>
 
 # TERMUX (NO PROOT)
