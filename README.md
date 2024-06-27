@@ -11,7 +11,7 @@
 
 ## Installation 
 
-#kde: [Here](xfce_styles.md)
+#kde: [Here](kde.md)
 
 #xfce: [Here](applist.md)
 
