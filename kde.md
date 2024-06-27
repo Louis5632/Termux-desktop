@@ -13,6 +13,9 @@ This repository provides scripts to set up a Debian desktop environment within T
 
 download installer
 ```
+pkg install wget
+```
+```
 wget https://raw.githubusercontent.com/Louis5632/Termux-desktop/main/kde-installer.md
 ```
 
@@ -21,6 +24,10 @@ Make it executable and run it.
 ```
 chmod +x kde-installer.md
 ./kde-installer.md
+```
+to start it type 
+```
+startkde_debian.sh
 ```
 
 
