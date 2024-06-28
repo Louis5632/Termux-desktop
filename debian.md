@@ -11,7 +11,7 @@
 
 ## Installation 
 
-#kde: [Here](kde.md)
+#kde: [Here](kde-debian.md)
 
 #xfce: [Here](debain-xfce.md)
 
