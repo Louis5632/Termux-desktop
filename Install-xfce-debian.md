@@ -8,7 +8,6 @@ B="$(printf '\033[1;34m')"
 C="$(printf '\033[1;36m')"                                       
 W="$(printf '\033[0m')"
 BOLD="$(printf '\033[1m')"
-config_file="$PREFIX/etc/termux-desktop/configuration"
 
 # Clear the terminal and display a header
 clear
@@ -26,32 +25,40 @@ is_installed() {
 
 # Install necessary Termux packages if not already installed
 echo "${C}${BOLD}Installing proot and dependencies${W}"
-for pkg in x11-repo termux-x11-nightly tur-repo pulseaudio proot-distro wget git sudo; do
+for pkg in x11-repo termux-x11 tur-repo pulseaudio proot-distro wget git sudo; do
     if ! is_installed "$pkg"; then
         pkg install -y "$pkg"
     fi
 done
 clear
 
+# Install Debian using proot-distro
 echo "${C}${BOLD}Installing Debian${W}"
 proot-distro install debian
-sleep 16
+sleep 10  # Adjust sleep time as needed
 clear
 
-# Prompt for username and password
-read -p "Enter the username for the new user: " username
-read -sp "Enter the password for the new user: " password
+# Automatically generate username and password
+username="termuxuser"
+password=$(openssl rand -base64 12)
+echo "${C}${BOLD}Generated Username: ${W}${username}"
+echo "${C}${BOLD}Generated Password: ${W}${password}"
 echo
 
 # Create a script to run inside the Debian environment
-cat <<EOF > /data/data/com.termux/files/home/debian-setup.sh
+cat <<'EOF' > $HOME/debian-setup.sh
 #!/bin/bash
-apt update -y
-apt upgrade -y
-apt install -y sudo xfce4 xfce4-whiskermenu-plugin mugshot nano passwd
+set -e
 
-# Create the new user
-adduser --disabled-password --gecos "" $username
+# Update and upgrade Debian
+apt update
+apt upgrade -y
+
+# Install necessary packages for XFCE desktop
+apt install -y sudo xfce4 xfce4-goodies mugshot nano
+
+# Create the new user with generated credentials
+useradd -m -s /bin/bash $username
 echo "$username:$password" | chpasswd
 
 # Add the user to the sudo group
@@ -62,43 +69,29 @@ echo "$username ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/$username
 chmod 440 /etc/sudoers.d/$username
 EOF
 
-chmod +x /data/data/com.termux/files/home/debian-setup.sh
+chmod +x $HOME/debian-setup.sh
 
-# Execute the script inside the Debian environment
-proot-distro login debian -- /bin/bash /data/data/com.termux/files/home/debian-setup.sh
+# Execute the script inside the Debian environment using proot-distro
+proot-distro login debian -- /bin/bash $HOME/debian-setup.sh
 
 # Clean up the setup script
-rm /data/data/com.termux/files/home/debian-setup.sh
+rm $HOME/debian-setup.sh
 
-# Create the start script with the specified username
-cat <<EOF > $HOME/startxfce4_debian.sh
+# Create the start script to launch XFCE desktop
+cat <<'EOF' > $HOME/startxfce4_debian.sh
 #!/data/data/com.termux/files/usr/bin/bash
 
-# Kill open X11 processes
-kill -9 \$(pgrep -f "termux.x11") 2>/dev/null
+# Kill any existing X11 processes
+pkill Xvfb || true
 
-# Enable PulseAudio over Network
-pulseaudio --start --load="module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth-anonymous=1" --exit-idle-time=-1
+# Start PulseAudio and X11
+pulseaudio --start --exit-idle-time=-1
+export DISPLAY=:0
 
-# Prepare termux-x11 session
-export XDG_RUNTIME_DIR=\${TMPDIR}
-termux-x11 :0 >/dev/null &
-
-# Wait a bit until termux-x11 gets started.
-sleep 3
-
-# Launch Termux X11 main activity
-am start --user 0 -n com.termux.x11/com.termux.x11.MainActivity > /dev/null 2>&1
-sleep 1
-
-# Login in PRoot Environment. Do some initialization for PulseAudio, /tmp directory
-# and run XFCE4 as user.
-proot-distro login debian --shared-tmp -- /bin/bash -c  'export PULSE_SERVER=127.0.0.1 && export XDG_RUNTIME_DIR=\${TMPDIR} && su - $username -c "env DISPLAY=:0 startxfce4"'
-
-exit 0
+# Launch XFCE desktop
+proot-distro login debian --shared-tmp -- /bin/bash -c "su - $username -c 'startxfce4'"
 EOF
 
-# Make the start script executable
 chmod +x $HOME/startxfce4_debian.sh
 
 echo "${G}User $username added successfully and configured.${W}"
