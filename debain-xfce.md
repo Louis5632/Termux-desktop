@@ -16,14 +16,14 @@ download installer
 pkg install wget
 ```
 ```
-wget https://raw.githubusercontent.com/Louis5632/Termux-desktop/main/xfce-installer.md
+wget https://raw.githubusercontent.com/Louis5632/Termux-desktop/main/Install-xfce-debian.md
 ```
 
 Make it executable and run it.
 
 ```
-chmod +x kde-installer.md
-./xfce-installer.md
+chmod +x Install-xfce-debian.md
+./Install-xfce-debian.md
 ```
 to start it type 
 ```
