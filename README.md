@@ -14,8 +14,6 @@
 
 -debian: [Here](debian.md)
 
--arth: [Here](arth.md)
-
 -More coming soon
 
 
